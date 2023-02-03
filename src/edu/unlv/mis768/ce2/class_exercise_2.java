@@ -1,5 +1,8 @@
 package edu.unlv.mis768.ce2;
 
+import java.util.Scanner;
+import java.util.ArrayList;
+
  public class class_exercise_2 {
 
 	public static void main(String[] args) {
