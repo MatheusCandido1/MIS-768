@@ -1,3 +1,11 @@
+/*
+ * Author: Matheus Candido Carvalho
+ * Purpose: The purpose of this program is to record and calculate the GPA given the 
+ * information provided by user. The program also gives the user the option to
+ * export the grades and results to a txt file.
+ * Date: 02/08/2023
+ */
+
 package edu.unlv.mis768.ia2;
 
 import java.util.ArrayList;
