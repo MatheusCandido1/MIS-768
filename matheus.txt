@@ -1,7 +1,4 @@
 COURSE		CREDIT		GRADE		GRADE POINT
 MIS740			3			B+			3.3
-BUS102			0			A			4.0
-MIS755			1			A			4.0
-MIS766			3			A-			3.7
 =========================
-GPA: 3.57
+GPA: 3.3
