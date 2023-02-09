@@ -50,27 +50,27 @@ public class Course {
 	private void convertGradeToPoints(String grade) {
 		// Use if statements to convert the grade to points
 		if(grade.equals("A") || grade.equals("A+")) {
-			points = 4.0;
+			points = 4.00;
 		} else if (grade.equals("A-")) {
-			points = 3.7;
+			points = 3.70;
 		} else if(grade.equals("B+")) {
-			points = 3.3;
+			points = 3.30;
 		} else if (grade.equals("B")) {
-			points = 3.0;
+			points = 3.00;
 		} else if (grade.equals("B-")) {
-			points = 2.7;
+			points = 2.70;
 		} else if (grade.equals("C+")) {
-			points = 2.3;
+			points = 2.30;
 		} else if (grade.equals("C")) {
-			points = 2.0;
+			points = 2.00;
 		} else if (grade.equals("C-")) {
-			points = 1.7;
+			points = 1.70;
 		} else if (grade.equals("D+")) {
-			points = 1.3;
+			points = 1.30;
 		} else if (grade.equals("D")) {
-			points = 1.0;
+			points = 1.00;
 		} else {
-			points = 0.0;
+			points = 0.00;
 		}
 	}
 	// Create a get method for the points

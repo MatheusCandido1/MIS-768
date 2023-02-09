@@ -19,7 +19,7 @@ import java.text.DecimalFormat;
 public class individual_assignment_2 {
 
 	// Instantiating the decimal format object globally to be used in the whole program
-    static DecimalFormat df = new DecimalFormat("#.##");
+    static DecimalFormat df = new DecimalFormat("0.00");
 
 	// Create main method
 	public static void main(String[] args) throws IOException {
@@ -100,7 +100,7 @@ public class individual_assignment_2 {
 		outputFile.println("COURSE\t\tCREDIT\t\tGRADE\t\tGRADE POINT");
 		
 		// Loop through the ArrayList and print the information of each course
-		courses.forEach((course) -> outputFile.println(course.getNumber()+"\t\t\t"+course.getCredits()+"\t\t\t"+course.getGrade()+"\t\t\t"+course.getPoints()));
+		courses.forEach((course) -> outputFile.println(course.getNumber()+"\t\t\t"+course.getCredits()+"\t\t\t"+course.getGrade()+"\t\t\t"+df.format(course.getPoints())));
 		// Print the footer of the file
 		outputFile.println("=========================");
 		// Print the GPA
