@@ -5,15 +5,25 @@ public class Test {
 	private int numMissed;
 
 	public Test(int numQ) {
-		this.numQuestion = numQ;
+		if(numQ < 0) {
+			this.numQuestion = 0;
+		}
+		else {
+			this.numQuestion = numQ;
+		}
 	}
 	
 	public int getNumQuestion() {
 		return numQuestion;
 	}
 
-	public void setNumMissed(int numMissed) {
-		this.numMissed = numMissed;
+	public void setNumMissed(int numM) {
+		if (numM < 0) {
+			this.numMissed = 0;
+		}
+		else {
+			this.numMissed = numM;
+		}
 	}
 
 	public int getNumMissed() {
@@ -21,13 +31,21 @@ public class Test {
 	}
 	
 	public double getPointsEach() {
-		return 0.00;
+		if(this.getNumQuestion() == 0) {
+			return 0.00;
+		}
+		double pointsEach = 100 / (double) this.getNumQuestion();
+		return Math.round(pointsEach * 100)/100d;
 	}
 	
 	public double getScore() {
-		return 0.00;
+		if(this.getNumQuestion() == 0) {
+			return 0.00;
+		}
+		double score = 100 - (this.getNumMissed() * getPointsEach());
+		return Math.round(score * 100)/100d;
 	}
-	
+	  
 	
 	
 	
