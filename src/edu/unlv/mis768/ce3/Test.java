@@ -45,12 +45,16 @@ public class Test {
 		double score = 100 - (this.getNumMissed() * getPointsEach());
 		return Math.round(score * 100)/100d;
 	}
-	  
 	
+	public String toString() {
+		return "The test includes " + this.numQuestion + " question(s); each question is " + this.getPointsEach() + " points. \n"
+				+ "The test-maker missed " + this.numMissed + " question(s) \n"
+						+ "The score is " + this.getScore();
+	}
 	
-	
-	
-	
-	
-
+	public boolean equals(Test t2) {
+		if(t2.getScore() == this.getScore()) 
+			return true;
+		return false;
+	}
 }
