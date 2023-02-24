@@ -25,10 +25,10 @@ public class StockTrader {
 	      sharesToBuy = keyboard.nextInt();
 	      
 	      // Create a StockPurchase object for the transaction.
-	      StockPurchase transaction = new StockPurchase(compXYZ, sharesToBuy);
+	      //StockPurchase transaction = new StockPurchase(compXYZ, sharesToBuy);
 	      
 	      // Display the cost of the transaction.
-	      System.out.println("The total cost is "+ formatter.format(transaction.getCost()));
+	      //System.out.println("The total cost is "+ formatter.format(transaction.getCost()));
 
 
 

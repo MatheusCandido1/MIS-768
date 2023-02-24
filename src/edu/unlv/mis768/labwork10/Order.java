@@ -8,6 +8,7 @@ public class Order {
 	private String orderNum;
 	private Date orderDate;
 	private double discountAmount;
+	private ArrayList<OrderDetail> detailedList;
 
 	
 	// constructor
@@ -45,6 +46,29 @@ public class Order {
 
 	public void setDiscountAmount(double discountAmount) {
 		this.discountAmount = discountAmount;
+	}
+
+	
+	public ArrayList<OrderDetail> getDetailedList() {
+		return detailedList;
+	}
+
+	
+	public void addOrderDetail(OrderDetail line) {
+		this.detailedList.add(line);
+	}
+	
+	public double getTotal() {
+		double total = 0;
+		
+		for(int i = 0; i < this.detailedList.size(); i++) {
+			total += this.detailedList.get(i).getSubTotal();
+			total += this.detailedList.get(i).calcTax();
+		}
+		
+		total -= this.discountAmount;
+		
+		return total;
 	}
 
 	

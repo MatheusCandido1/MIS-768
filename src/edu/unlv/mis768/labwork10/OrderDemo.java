@@ -16,7 +16,7 @@ public class OrderDemo {
 		Date date = new Date();
 		
 		// create the Order object
-		Order tran = 
+		Order tran = new Order(orderNum, date);
 
 		// get items
 		System.out.println("Please enter the items below.");
@@ -33,16 +33,16 @@ public class OrderDemo {
 			double price = kb.nextDouble();
 		
 			//create the Product object
-			Product item = 
+			Product item = new Product(prodName, prodType, price);
 		
-			System.out.print("Qunatity for item "+itemCount+": ");
+			System.out.print("Quantity for item "+itemCount+": ");
 			int quan = kb.nextInt();
 		
 			//create the OrderDetail object
-			OrderDetail line = 
+			OrderDetail line = new OrderDetail(quan, item);
 		
 			//add the OrderDetail object to the order
-			
+			tran.addOrderDetail(line);
 			
 			// consume the enter key
 			kb.nextLine();
@@ -71,22 +71,22 @@ public class OrderDemo {
 			System.out.print(tran.getDetailedList().get(i).getItem().getName());
 			System.out.print("\t");
 			// product price
-			System.out.print();
+			System.out.print(tran.getDetailedList().get(i).getItem().getUnitPrice());
 			System.out.print("\t");
 			// quantity
 			System.out.print(tran.getDetailedList().get(i).getQuantity());
 			System.out.print("\t\t");
 			//subtotal
-			System.out.print();
+			System.out.print(tran.getDetailedList().get(i).getSubTotal());
 			System.out.print("\t\t");
 			//tax
 			if(tran.getDetailedList().get(i).calcTax()!=0)
-				System.out.print();
+				System.out.print(tran.getDetailedList().get(i).calcTax());
 			// new line
 			System.out.print("\n");
 			
 			// add to the tax total
-			preTaxTotal += tran.getDetailedList().get(i).getSubtotal();
+			preTaxTotal += tran.getDetailedList().get(i).getSubTotal();
 			taxTotal += tran.getDetailedList().get(i).calcTax();
 		}
 		

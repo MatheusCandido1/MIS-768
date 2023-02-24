@@ -9,6 +9,7 @@ public class StockPurchase {
 private Stock stock;  // The stock that was purchased
 private int shares;   // Number of shares owned
 
+public StockPurchase() {}
 /**
    Constructor
    @param stockObject The stock to purchase.
@@ -18,7 +19,7 @@ public StockPurchase(Stock stockObject, int numShares) {
    // Create a copy of the object referenced by
    // stockObject.
    this.stock = stockObject.copy();
-   shares = numShares;
+   this.shares = numShares;
 }
 
 /**
