@@ -28,7 +28,8 @@ public class CurvedActivity extends GradedActivity {
 
    public void setScore(double s) {
 	   // the given score will be stored as the raw score
-      
+      this.rawScore = s;
+      super.setScore(s * percentage);
       // call the setScore() method of the superclass to set the new score (after curving)
       
    }

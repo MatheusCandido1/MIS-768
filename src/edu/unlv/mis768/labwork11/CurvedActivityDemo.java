@@ -19,19 +19,19 @@ public class CurvedActivityDemo {
 	      curvePercent = keyboard.nextDouble();
 
 	      // Create a CurvedActivity object
-	      
+	      CurvedActivity curvedActivity = new CurvedActivity(curvePercent);
 	      
 	      // Set the exam score
-	      
+	      curvedActivity.setScore(score);
 	      
 	      // Display the raw score
-	      System.out.println("The original score is ");
+	      System.out.println("The original score is " + curvedActivity.getRawScore());
 	      
 	      // Display the curved score
-	      System.out.println("The curved socre is ");
+	      System.out.println("The curved score is " + curvedActivity.getScore());
 	      
 	      // Display the exam grade
-	      System.out.println("The curved grade is ");
+	      System.out.println("The curved grade is " + curvedActivity.getGrade());
 	      
 	}
 

@@ -26,13 +26,13 @@ public class CubeDemo {
 	      height = keyboard.nextDouble();
 		
 	      // Create a Cube object and pass the dimensions to the constructor
-	      
+	      Cube c = new Cube(length, width, height);
 	      
 	      // Display the cube's properties
-	      System.out.println("Length: ");
-	      System.out.println("Width: ");
-	      System.out.println("Height:");
-	      System.out.println("Volume: ");
+	      System.out.println("Length: " + c.getLength());
+	      System.out.println("Width: " + c.getWidth());
+	      System.out.println("Height: " + c.getHeight());
+	      System.out.println("Volume: " +c.getVolume());
 	}
 
 }
