@@ -13,7 +13,8 @@ public class DeserializeObjects{
       final int NUM_ITEMS = 3;   // Number of accounts
   
       // Create the stream objects.
-
+      FileInputStream fstream = new FileInputStream("account.dat");
+      ObjectInputStream objStream = new ObjectInputStream(fstream);
 	  
 
       // Create a BankAccount array
@@ -21,11 +22,11 @@ public class DeserializeObjects{
       
       // Read the serialized objects from the file.
       for (int i = 0; i < accounts.length; i++)      {
-         
+         accounts[i] = (BankAccount) objStream.readObject();
       }
       
       // Close the file.
-      
+      objStream.close();
       
       // Display the objects.
       for (int i = 0; i < accounts.length; i++)      {

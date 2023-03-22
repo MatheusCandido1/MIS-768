@@ -27,7 +27,7 @@ public class SalesReportMultiCatch {
 	         // Close the file.
 	         inputFile.close();
 	      }
-	      catch() {
+	      catch(FileNotFoundException| InputMismatchException ex) {
 	         // Display an error message.
 	         System.out.println("Error processing the file.");
 	      }

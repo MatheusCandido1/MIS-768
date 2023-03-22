@@ -34,15 +34,16 @@ public class SerializeObjects{
       }
       
       // Create the stream objects.
-      
+      FileOutputStream fstream = new FileOutputStream("account.dat");
+      ObjectOutputStream objStream = new ObjectOutputStream(fstream);
       
       // Write the serialized objects to the file.
       for (int i = 0; i < accounts.length; i++)      {
-         
+    	  objStream.writeObject(accounts[i]);
       }
       
       // Close the file.
-      
+      objStream.close();
       
       System.out.println("The serialized objects were written to the Objects.dat file.");
    }

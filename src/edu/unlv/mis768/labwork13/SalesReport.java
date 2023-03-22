@@ -14,12 +14,15 @@ public class SalesReport {
 	      int months = 0;                    // Month counter
 	      double oneMonth;                   // One month's sales
 	      double totalSales = 0.0;           // Total sales
-	      double averageSales;               // Average sales
-
+	      double averageSales;  
+	      boolean isFileValid = false;// Average sales
 
 	         // Open the file.
 	         File file = new File(filename);
-	         Scanner inputFile = new Scanner(file);
+	         Scanner inputFile;
+	       while(!isFileValid) {
+			try {
+				inputFile = new Scanner(file);
 
 	         // Process the contents of the file.
 	         while (inputFile.hasNext()) {
@@ -42,6 +45,14 @@ public class SalesReport {
 	         System.out.println("Number of months: " + months +
 	                            "\nTotal Sales: $" + totalSales +
 	                            "\nAverage Sales: $" + averageSales);
+	         
+
+			} catch (FileNotFoundException e) {
+				// Show an appropriate message
+				System.out.println("The file " + filename + " does not exist");
+				isFileValid = false;
+			}
+	       }
 	      
 		  System.out.println("Done.");
 	}

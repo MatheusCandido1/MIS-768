@@ -18,6 +18,6 @@ public class RoulettePocketDemo2 {
 		   JOptionPane.showMessageDialog(null, "The number is "
 		                            +pocket.getNumber()+" and the color is "+pocket.getColor());
 		   
-		   
+		    
 	   }
 }

@@ -4,8 +4,12 @@ public class CopyDemo {
 
 	public static void main(String[] args) {
 		Stock compXYZ = new Stock("TSM",140.96);
+		Stock compABC = new Stock("TSM", 140.96);
 		
-		Stock compABC = compXYZ.copy();
+		
+		//Stock compABC = compXYZ.copy();
+		
+		//Stock compABC = compXYZ;
 		
 		System.out.println("first object "+ compXYZ);
 		System.out.println("second object "+ compABC);

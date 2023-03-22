@@ -21,7 +21,10 @@ public class SalesReportFinally {
 	    	  } catch (InputMismatchException e) {
 	    		  System.out.println("Invalid data found.");
 	    		  
-	    	  } 
+	    	  }
+	    	  finally {
+	    		  inputFile.close();
+	    	  }
 	    	  // need to close the file no matter what happened
 	    	  
 	    	  

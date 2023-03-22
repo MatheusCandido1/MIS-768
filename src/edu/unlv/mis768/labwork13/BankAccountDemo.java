@@ -12,7 +12,11 @@ public class BankAccountDemo {
 		double balance = kb.nextDouble();
 		
 
-		BankAccount account = new BankAccount(balance);
+		try {
+			BankAccount account = new BankAccount(balance);
+		} catch (NegativeStartingBalance e) {
+			System.out.println(e.getMessage());
+		}
 
 
 	}

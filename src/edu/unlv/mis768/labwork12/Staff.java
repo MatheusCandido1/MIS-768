@@ -69,12 +69,7 @@ public class Staff {
 		return salary;
 	}	
 	
-	public String toString() {
 
-	    DecimalFormat currency = new DecimalFormat("0.00");
-	    
-		return "Name: " + getName() + "\n"
-				+ "Salary: $" + currency.format(calcSalary());
-	}
+	
 	
 }

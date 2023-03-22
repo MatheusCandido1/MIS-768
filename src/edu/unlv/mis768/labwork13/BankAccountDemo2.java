@@ -17,13 +17,22 @@ public class BankAccountDemo2 {
 			// get the amount for deposit
 			System.out.println("Please enter the amount to deposit:");
 			double amount =kb.nextDouble();
-			account.deposit(amount);
+			try {
+				account.deposit(amount);
+			} catch (NegativeAmount e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+			}
 			
 			// get the amount with withdraw
 			System.out.println("Please enter the amount to withdraw:");
 			amount=kb.nextDouble();
-			account.withdraw(amount);
-			
+			try {
+				account.withdraw(amount);
+			} catch (NegativeAmount | Overdraft e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+			}
 		}
 		catch(NegativeStartingBalance e) {
 			System.out.println(e.getMessage());
