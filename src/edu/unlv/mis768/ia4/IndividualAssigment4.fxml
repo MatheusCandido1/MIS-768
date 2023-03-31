@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="475.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.unlv.mis768.ia4.IndividualAssignment4Controller">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="498.0" prefWidth="447.0" style="-fx-background-color: FFF; -fx-background-radius: 20;">
+         <children>
+            <Circle fill="#fda24e" layoutX="185.0" layoutY="180.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="162.0" layoutY="16.0" text="AutoJob" textAlignment="CENTER" textFill="#000000d9">
+               <font>
+                  <Font name="System Font" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="58.0" text="Services">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="oilChangeCheckBox" layoutX="43.0" layoutY="91.0" mnemonicParsing="false" text="Oil Change" />
+            <CheckBox fx:id="lubeJobCheckBox" layoutX="137.0" layoutY="91.0" mnemonicParsing="false" text="Lube Job" />
+            <CheckBox fx:id="radiatorFlushCheckBox" layoutX="222.0" layoutY="91.0" mnemonicParsing="false" text="Radiator Flush" />
+            <CheckBox fx:id="transmissionFlushCheckBox" layoutX="43.0" layoutY="126.0" mnemonicParsing="false" text="Transmission Flush" />
+            <CheckBox fx:id="inspectionCheckBox" layoutX="180.0" layoutY="126.0" mnemonicParsing="false" text="Inspection" />
+            <CheckBox fx:id="mufflerReplacementCheckBox" layoutX="272.0" layoutY="126.0" mnemonicParsing="false" text="Muffler Replacement" />
+            <CheckBox fx:id="tireRotationCheckBox" layoutX="328.0" layoutY="91.0" mnemonicParsing="false" text="Tire Rotation" />
+            <Label layoutX="43.0" layoutY="161.0" prefHeight="37.0" prefWidth="136.0" text="Additional Services">
+               <font>
+                  <Font name="System Font" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="241.0" text="Discount">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="partsTextField" layoutX="42.0" layoutY="202.0" promptText="Parts">
+               <tooltip>
+                  <Tooltip text="Empty Tooltip" />
+               </tooltip>
+            </TextField>
+            <TextField fx:id="laborTextField" layoutX="233.0" layoutY="202.0" promptText="Labor" />
+            <RadioButton fx:id="FifteenDiscountRadioButton" layoutX="253.0" layoutY="276.0" mnemonicParsing="false" text="15% Discount">
+               <toggleGroup>
+                  <ToggleGroup fx:id="discountGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="tenDiscountRadioButton" layoutX="144.0" layoutY="276.0" mnemonicParsing="false" text="10% Discount" toggleGroup="$discountGroup" />
+            <RadioButton fx:id="noDiscountRadioButton" layoutX="43.0" layoutY="276.0" mnemonicParsing="false" selected="true" text="No Discount" toggleGroup="$discountGroup" />
+            <Label layoutX="181.0" layoutY="170.0" text="?" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="If no Parts nor Labor were provided, leave the fields empty!">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Label>
+            <Label layoutX="312.0" layoutY="435.0" text="Total:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" fill="#fda24e" layoutX="339.0" layoutY="428.0" startX="-36.0" stroke="#fda24e" strokeWidth="2.0" style="-fx-fill: #fda24e;" />
+            <Label fx:id="totalValueLabel" layoutX="388.0" layoutY="436.0" prefHeight="17.0" prefWidth="53.0" text="\$ 0.00" />
+            <Button fx:id="saveButton" layoutX="42.0" layoutY="318.0" mnemonicParsing="false" onAction="#saveButtonListener" prefHeight="26.0" prefWidth="372.0" style="-fx-background-color: #fda24e;" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="resetButton" cancelButton="true" layoutX="394.0" layoutY="469.0" mnemonicParsing="false" onAction="#resetButtonListener" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: #fda24e; -fx-border-radius: 10;" text="Reset" textFill="#fda24e" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
