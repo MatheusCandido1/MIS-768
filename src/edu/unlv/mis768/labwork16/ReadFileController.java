@@ -29,18 +29,19 @@ import javafx.stage.FileChooser;
 	    
 	    public void browseButtonListener() {
 	    	// Instantiate the object of FileChoose
-	    	
+	    	FileChooser chooser = new FileChooser();
 	    	// Set the title 
-	    	
+	    	chooser.setTitle("Open File");
 	    	
 	    	// The showOpenDialog() method need to know which window it belongs to
-	    	
+	    	File dataFile = chooser.showOpenDialog(browseButton.getScene().getWindow());
 	    	
 	    	// if a file is selected
-	    	if( ) {
+	    	if(dataFile != null) {
 	    		// get the file path
-	    		
+	    		String fileName = dataFile.getPath();
 	    		// show the file path at the label
+	    		fileNameLabel.setText(fileName);
 	    		
 	    	}
 	    }
@@ -55,22 +56,27 @@ import javafx.stage.FileChooser;
 			double avg=0;
 			// count how many days
 			int dayCount = 0;
-			
+
+			try {
 			// file object for the scanner
-			
-			// a Scanner object for reading the file
-			
-			
-			
-			// read the entire file
-			while(inputfile.hasNext()) {
-				// read a number, add it to the total
+				File file = new File(fileNameLabel.getText());
+				// a Scanner object for reading the file
+				Scanner inputFile = new Scanner(file);
 				
-				// increase the day count
 				
+					while(inputFile.hasNext()) {
+						// read a number, add it to the total
+						total += inputFile.nextDouble();
+						dayCount++;
+						// increase the day count
+						
+					}
+					inputFile.close();
+			}	
+			catch(Exception e) {
+				System.out.println(e.getMessage());
+				fileNameLabel.setText("File not found.");
 			}
-			// close the file
-			inputfile.close();
 			
 			// if more than 0 days
 			if(dayCount !=0)

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="297.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.unlv.mis768.labwork16.SideMenuController">
+<AnchorPane prefHeight="297.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.unlv.mis768.labwork16.SideMenuController">
    <children>
       <VBox prefHeight="297.0" prefWidth="334.0" spacing="10.0">
          <children>
@@ -31,7 +31,7 @@
                <children>
                   <Label fx:id="totalLabel" />
                   <Button fx:id="startOverButton" onAction="#startOverButtonListener" text="Start Over" />
-                  <Button fx:id="calculateButton" onAction="#calculateButtonListener" text="Calcualte Total" />
+                  <Button fx:id="calculateButton" defaultButton="true" onAction="#calculateButtonListener" text="Calculate Total" />
                </children>
             </HBox>
          </children>

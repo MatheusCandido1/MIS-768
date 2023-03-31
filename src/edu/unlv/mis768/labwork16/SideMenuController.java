@@ -35,12 +35,15 @@ public class SideMenuController {
     private CheckBox saladCheckBox;
     
     // Declare a field for saving the sandwich selected in the previous window
+    private String orderItem;
     
-   
 	/**
     * the method for receiving values passed from the previous scene
     */
-
+    public void initData(String item) {
+    	orderItem = item;
+    	selectionTextArea.setText(item);
+    }
 
 
 
@@ -50,6 +53,7 @@ public class SideMenuController {
      * @param e
      */
     public void startOverButtonListener(ActionEvent e){
+    	this.totalLabel.setText("");
     	// the FXML loader object to load the UI design
     	FXMLLoader loader = new FXMLLoader();
     	// specify the file location
