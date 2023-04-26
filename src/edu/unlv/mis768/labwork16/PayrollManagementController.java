@@ -1,6 +1,8 @@
 package edu.unlv.mis768.labwork16;
 
 import java.util.ArrayList;
+
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,35 +17,44 @@ import javafx.util.converter.*;
 public class PayrollManagementController {
 
 	// add the FXML controls of Table view and TableColumn here
+	
 
+    @FXML
+    private TableColumn<Payroll, String> employeeNameColumn;
 
-
-
-
-
-
+    @FXML
+    private TextField hoursTextField;
 
     @FXML
     private TextField nameTextField;
+
+    @FXML
+    private TableColumn<Payroll, Integer> numberOfHoursColumn;
+
+    @FXML
+    private TableColumn<Payroll, Double> payRateColumn;
+
     @FXML
     private TextField rateTextField;
-    @FXML
-    private TextField hoursTextField;
-    @FXML
-    private Button addButton;
+
     @FXML
     private TextArea summaryTextArea;
+
     @FXML
-    private Button generateButton;
+    private TableView<Payroll> tableView;
+
     @FXML
     private Label totalLabel;
+
 	
     /** 
      * For setting up initial values 
      */
 	public void initialize() {
 		// set up the columns in the table
-
+		employeeNameColumn.setCellValueFactory(new PropertyValueFactory<Payroll, String>("empName"));
+		payRateColumn.setCellValueFactory(new PropertyValueFactory<Payroll, Double>("payRate"));
+		numberOfHoursColumn.setCellValueFactory(new PropertyValueFactory<Payroll, Integer>("numOfHours"));
 
 			
 	}
@@ -54,15 +65,16 @@ public class PayrollManagementController {
 	 */
 	public void addButtonListener() {
 		// create a Payroll object
-		
+		Payroll payroll = new Payroll();
 		
 		// set the values
-		
-		
+		payroll.setEmpName(this.nameTextField.getText());
+		payroll.setPayRate(this.rateTextField.getText());
+		payroll.setNumOfHours(this.hoursTextField.getText());
 		
 		// get all the items from the table as a list, then add the new object to it
 		// add it to the table
-		
+		tableView.getItems().add(payroll);
 	}
 	
 	/**
@@ -70,10 +82,10 @@ public class PayrollManagementController {
 	 */
 	public void deleteButtonListener() {
 		// get the index of the item selected in the TableView
-		
+		int selectedRow = tableView.getSelectionModel().getSelectedIndex();
 		
 		// remove the row
-		
+		tableView.getItems().remove(selectedRow);
 	}
 	
 	/**
@@ -88,14 +100,12 @@ public class PayrollManagementController {
 		
 		// a loop to traverse the loop
 		// each row is an Payroll object
-		/*
-		for() {
-			// use the toString() method to display the content of the object
+		for(Payroll record: tableView.getItems()) {
 			
-			// use the calWage() method to get the pay
-			
+			str += record.toString();
+			total += record.calWage();
+			System.out.println(total);
 		}
-		/*
 		/* The following loop is the same as the above loop
 	    for(int i =0;i<=tableView.getItems().size();i++) {
 		// use the toString() method to display the content of the object

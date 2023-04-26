@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="426.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.unlv.mis768.ia5.IndividualAssingment5Controller">
+   <children>
+      <TextField fx:id="customerNumberTextField" layoutX="127.0" layoutY="90.0" promptText="e.g. 101" />
+      <Label layoutX="127.0" layoutY="70.0" text="Customer Number" />
+      <Label layoutX="127.0" layoutY="136.0" text="Product Number" />
+      <Label layoutX="127.0" layoutY="202.0" text="Quantity" />
+      <TextField fx:id="productNumberTextField" layoutX="127.0" layoutY="156.0" promptText="e.g. 15-003" />
+      <TextField fx:id="quantityTextField" layoutX="127.0" layoutY="223.0" />
+      <Button fx:id="saveButton" layoutX="127.0" layoutY="269.0" mnemonicParsing="false" onAction="#saveButtonListener" prefHeight="26.0" prefWidth="159.0" text="Save" />
+      <Label fx:id="resetButton" layoutX="191.0" layoutY="305.0" onMouseClicked="#resetButtonListener" text="Reset" />
+      <Label fx:id="customerNumberErrorLabel" layoutX="128.0" layoutY="117.0" text="Customer not found" textFill="#fe4e4e">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="productNumberErrorLabel" layoutX="128.0" layoutY="183.0" text="Product not found" textFill="#fe4e4e">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
